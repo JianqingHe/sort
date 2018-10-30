@@ -16,6 +16,6 @@ public class MainTest {
         System.out.println(JSON.toJSONString(InsertSort.sort(ints)));
         System.out.println(JSON.toJSONString(BubbleSort.sort(ints)));
         System.out.println(JSON.toJSONString(QuickSort.sort(ints, 0, ints.length - 1)));
-        System.out.println(JSON.toJSONString(ShellSort.sort(ints)));
+        System.out.println(JSON.toJSONString(ShellSort.sort(ints, 5)));
     }
 }

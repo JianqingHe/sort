@@ -24,13 +24,14 @@ public class ShellSort {
      *     3、 每趟排序，根据对应的增量 ti，将待排序列分割成若干长度为 m 的子序列，分别对各子表进行直接插入排序。
      *         仅增量因子为 1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。
      * </note>
-     * @param ints
-     * @return
+     * @param ints 待排序数组
+     * @param k 序列k
+     * @return 排序后的数组
      */
-    public static int[] sort(int[] ints) {
+    public static int[] sort(int[] ints, int k) {
         int gap = 1;
         while (gap < ints.length) {
-            gap = gap * 3 + 1;
+            gap = gap * k + 1;
         }
         while (gap > 0) {
             for (int i = gap; i < ints.length - 1; i++ ) {
@@ -42,7 +43,7 @@ public class ShellSort {
                 }
                 ints[j + gap] = temp;
             }
-            gap = (int) Math.floor(gap / 3);
+            gap = (int) Math.floor(gap / k);
         }
         return ints;
     }
